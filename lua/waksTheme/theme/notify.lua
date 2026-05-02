@@ -3,6 +3,7 @@ local colors = require('waksTheme.colors')
 local M = {}
 
 M.set_highlights = function(variant)
+<<<<<<< HEAD
     local col = colors.variants[variant] or colors.variants.default
 
     -- Notify highlights
@@ -43,6 +44,48 @@ M.set_highlights = function(variant)
     for group, hl in pairs(highlights) do
         vim.api.nvim_set_hl(0, group, hl)
     end
+=======
+  local col = colors.variants[variant] or colors.variants.default
+
+  -- Notify highlights
+  local highlights = {
+    NotifyBackground = { bg = col.popup_bg },
+
+    -- Error level
+    NotifyERRORBorder = { fg = col.red },
+    NotifyERRORIcon = { fg = col.red },
+    NotifyERRORTitle = { fg = col.red, italic = true },
+    NotifyERRORBody = { fg = col.foreground, bg = col.popup_bg },
+
+    -- Warning level
+    NotifyWARNBorder = { fg = col.yellow },
+    NotifyWARNIcon = { fg = col.yellow },
+    NotifyWARNTitle = { fg = col.yellow, italic = true },
+    NotifyWARNBody = { fg = col.foreground, bg = col.popup_bg },
+
+    -- Info level
+    NotifyINFOBorder = { fg = col.cyan },
+    NotifyINFOIcon = { fg = col.cyan },
+    NotifyINFOTitle = { fg = col.cyan, italic = true },
+    NotifyINFOBody = { fg = col.foreground, bg = col.popup_bg },
+
+    -- Debug level
+    NotifyDEBUGBorder = { fg = col.orange },
+    NotifyDEBUGIcon = { fg = col.orange },
+    NotifyDEBUGTitle = { fg = col.orange, italic = true },
+    NotifyDEBUGBody = { fg = col.foreground, bg = col.popup_bg },
+
+    -- Trace level
+    NotifyTRACEBorder = { fg = col.purple },
+    NotifyTRACEIcon = { fg = col.purple },
+    NotifyTRACETitle = { fg = col.purple, italic = true },
+    NotifyTRACEBody = { fg = col.foreground, bg = col.popup_bg },
+  }
+
+  for group, hl in pairs(highlights) do
+    vim.api.nvim_set_hl(0, group, hl)
+  end
+>>>>>>> 113e6a7a21a17117131e478fd263c717a4792536
 end
 
 return M

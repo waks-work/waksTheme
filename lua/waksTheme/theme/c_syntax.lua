@@ -4,10 +4,17 @@ local colors = require('waksTheme.colors')
 local M = {}
 
 M.set_highlights = function(variant)
+<<<<<<< HEAD
     local col = colors.variants[variant] or colors.variants.default
 
     -- Force Vim regex syntax for preprocessor (Tree-sitter isn't catching it)
     vim.cmd([[
+=======
+  local col = colors.variants[variant] or colors.variants.default
+
+  -- Force Vim regex syntax for preprocessor (Tree-sitter isn't catching it)
+  vim.cmd([[
+>>>>>>> 113e6a7a21a17117131e478fd263c717a4792536
     " Clear any existing preprocessor syntax
     syntax clear cPreCondit
     syntax clear cDefine
@@ -33,6 +40,7 @@ M.set_highlights = function(variant)
     syntax keyword cTodo contained TODO FIXME XXX NOTE HACK
   ]])
 
+<<<<<<< HEAD
     local highlights = {
         -- Preprocessor - ALL variations
         cPreCondit = { fg = col.pink },
@@ -76,6 +84,51 @@ M.set_highlights = function(variant)
     for group, hl in pairs(highlights) do
         vim.api.nvim_set_hl(0, group, hl)
     end
+=======
+  local highlights = {
+    -- Preprocessor - ALL variations
+    cPreCondit = { fg = col.pink },
+    cPreConditKeyword = { fg = col.pink },
+    cDefine = { fg = col.pink },
+    cDefineKeyword = { fg = col.pink },
+    cInclude = { fg = col.pink },
+    cIncludeKeyword = { fg = col.pink },
+    cIncluded = { fg = col.yellow },
+    cPreProc = { fg = col.pink },
+    cPreProcHash = { fg = col.pink },
+
+    -- Generic preprocessor groups
+    PreProc = { fg = col.pink },
+    Include = { fg = col.pink },
+    Define = { fg = col.pink },
+    Macro = { fg = col.pink },
+    PreCondit = { fg = col.pink },
+
+    -- Comments
+    cComment = { fg = col.comment, italic = true },
+    cCommentL = { fg = col.comment, italic = true },
+    cCommentStart = { fg = col.comment, italic = true },
+    cTodo = { fg = col.orange, bg = col.cursor_line, bold = true },
+    Comment = { fg = col.comment, italic = true },
+
+    -- Other C groups
+    cType = { fg = col.type_user },
+    cStorageClass = { fg = col.pink },
+    cStructure = { fg = col.cyan },
+    cConstant = { fg = col.cyan },
+    cSpecial = { fg = col.orange },
+    cFormat = { fg = col.orange },
+    cStatement = { fg = col.pink },
+    cLabel = { fg = col.control_flow },
+    cConditional = { fg = col.control_flow },
+    cRepeat = { fg = col.control_flow },
+    cOperator = { fg = col.pink },
+  }
+
+  for group, hl in pairs(highlights) do
+    vim.api.nvim_set_hl(0, group, hl)
+  end
+>>>>>>> 113e6a7a21a17117131e478fd263c717a4792536
 end
 
 return M

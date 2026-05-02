@@ -26,7 +26,11 @@ M.set_highlights = function(variant)
 
     -- Other elements
     RenderMarkdownBullet = { fg = col.pink },
+<<<<<<< HEAD
     RenderMarkdownQuote = { fg = col.comment, italic = false },
+=======
+    RenderMarkdownQuote = { fg = col.comment, italic = true },
+>>>>>>> 113e6a7a21a17117131e478fd263c717a4792536
     RenderMarkdownLink = { fg = col.cyan, underline = true },
     RenderMarkdownLinkText = { fg = col.cyan },
     RenderMarkdownLinkLabel = { fg = col.purple },

@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 # Template Usage Guide
 ## Creating a New Project
 
+=======
+
+# Template Usage Guide
+## Creating a New Project
+>>>>>>> 113e6a7a21a17117131e478fd263c717a4792536
 ```bash
 # Using GitHub CLI
 gh repo create my-new-project --template yourusername/universal-project-template
@@ -11,10 +17,14 @@ cd my-new-project
 rm -rf .git
 git init
 git add .
+<<<<<<< HEAD
 git commit -m "Initial commit"
 
 ```
 
+=======
+git commit -m "Initial commit" ```
+>>>>>>> 113e6a7a21a17117131e478fd263c717a4792536
 ## Customizing for Your Project
  - **Update README.md** - Change project name and description
  - **Update CODEOWNERS** - Replace @YOUR_USERNAME with actual maintainers
